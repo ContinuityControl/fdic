@@ -17,22 +17,22 @@ module FDIC
     }
   end
 
-  def find_institution(cert_number)
-    resp = Client.new.find_institution(cert_number)
+  def find_institution(certificate_number)
+    resp = Client.new.find_institution(certificate_number)
     resp['d']['results'].map { |result|
       FDIC::Institution.new(result)
     }
   end
 
-  def find_branches(cert_number)
-    resp = Client.new.find_branches(cert_number)
+  def find_branches(certificate_number)
+    resp = Client.new.find_branches(certificate_number)
     resp['d']['results'].map { |result|
       FDIC::Branch.new(result)
     }
   end
 
-  def find_history_events(bank_name, cert_number)
-    resp = Client.new.find_history_events(bank_name, cert_number)
+  def find_history_events(bank_name, certificate_number)
+    resp = Client.new.find_history_events(bank_name, certificate_number)
     resp['d']['results'].map { |result|
       FDIC::HistoryEvent.new(result)
     }

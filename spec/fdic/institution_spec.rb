@@ -73,7 +73,7 @@ describe FDIC::Institution do
   it 'parses data out correctly' do
     expect(institution.fdic_id).to eq('11183')
     expect(institution.legal_name).to eq('Heritage Bank')
-    expect(institution.cert_number).to eq('17145')
+    expect(institution.certificate_number).to eq('17145')
     expect(institution).to be_active
     expect(institution.inactive_as_of_date).to eq(Date.new(9999, 12, 31))
 

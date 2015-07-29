@@ -27,7 +27,7 @@ describe FDIC::Branch do
   it 'parses data out correctly' do
     expect(branch.fdic_id).to eq('10345')
     expect(branch.branch_name).to eq('First National Bank Alaska')
-    expect(branch.cert_number).to eq('16130')
+    expect(branch.certificate_number).to eq('16130')
     expect(branch.address).to eq('101 W. 36th Avenue')
     expect(branch.city).to eq('Anchorage')
     expect(branch.county).to eq('Anchorage')

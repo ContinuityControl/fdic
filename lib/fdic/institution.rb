@@ -2,7 +2,7 @@ module FDIC
   class Institution < Record
     field :fdic_id, :id
     field(:legal_name, :legalName, &:strip)
-    field :cert_number, :certNumber
+    field :certificate_number, :certNumber
     field(:active?, 'activeFlag') { |value| value == 'Y' }
     date_field :inactive_as_of_date, "inActiveAsofDt"
     field :address

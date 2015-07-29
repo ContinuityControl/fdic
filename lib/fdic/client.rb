@@ -15,24 +15,24 @@ module FDIC
                        '$filter' => "(substringof('#{bank_name.upcase}',name))"})
     end
 
-    def find_institution(cert_number)
+    def find_institution(certificate_number)
       self.class.get('/Institution',
                      query:
                      { '$inlinecount' => 'all',
                        '$format' => 'json',
-                       '$filter' => "certNumber eq #{cert_number}"})
+                       '$filter' => "certNumber eq #{certificate_number}"})
     end
 
-    def find_branches(cert_number)
+    def find_branches(certificate_number)
       self.class.get('/Branch',
                      query:
                      { '$inlinecount' => 'allpages',
                        '$format' => 'json',
-                       '$filter' => "certNumber eq #{cert_number}"})
+                       '$filter' => "certNumber eq #{certificate_number}"})
     end
 
-    def find_history_events(bank_name, cert_number)
-      filter = "legalName eq '#{bank_name.upcase}' and certNumber eq #{cert_number}"
+    def find_history_events(bank_name, certificate_number)
+      filter = "legalName eq '#{bank_name.upcase}' and certNumber eq #{certificate_number}"
       self.class.get('/History',
                      query:
                      { '$inlinecount' => 'all',

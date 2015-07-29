@@ -24,7 +24,7 @@ module FDIC
   class Branch < Record
     field :fdic_id, 'id'
     field(:branch_name, 'branchName', &:strip)
-    field :cert_number, :certNumber
+    field :certificate_number, :certNumber
 
     field :address
     field :city

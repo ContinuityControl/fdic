@@ -50,7 +50,7 @@ describe FDIC::HistoryEvent do
   it 'parses data out correctly' do
     expect(history_event.fdic_id).to eq('43690')
     expect(history_event.legal_name).to eq('First Federal Savings and Loan Association')
-    expect(history_event.cert_number).to eq('30856')
+    expect(history_event.certificate_number).to eq('30856')
     expect(history_event.city).to eq('ANCHORAGE')
     expect(history_event.state).to eq('AK')
     expect(history_event.effective_date).to eq(Date.new(1955, 1, 1))

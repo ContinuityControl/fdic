@@ -3,7 +3,7 @@ module FDIC
 
     field :fdic_id, :id
     field(:legal_name, :legalName, &:strip)
-    field :cert_number, :certNumber
+    field :certificate_number, :certNumber
 
     date_field :effective_date, :orgEffDate
     field :event_description, :eventDescription

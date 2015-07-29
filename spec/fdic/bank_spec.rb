@@ -25,7 +25,7 @@ describe FDIC::Bank do
   it 'parses data out correctly' do
     expect(bank.fdic_id).to eq('8950')
     expect(bank.legal_name).to eq('Peoples-Webster County Bank')
-    expect(bank.cert_number).to eq('14326')
+    expect(bank.certificate_number).to eq('14326')
     expect(bank).to_not be_active
     expect(bank.address).to eq('126 WEST FOURTH STREET')
     expect(bank.city).to eq('RED CLOUD')
