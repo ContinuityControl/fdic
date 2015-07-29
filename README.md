@@ -1,8 +1,11 @@
 # FDIC
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fdic`. To experiment with that code, run `bin/console` for an interactive prompt.
+The FDIC [lets you find information on
+Banks](https://research.fdic.gov/bankfind/index.html). Their site uses [a JSON
+API](http://www.programmableweb.com/news/fdic-bank-data-api-available-official-announcement-pending/2015/02/06)
+to look up financial information, branch information, etc.
 
-TODO: Delete this and the text above, and describe your gem
+This gem is a ruby client to that API.
 
 ## Installation
 
