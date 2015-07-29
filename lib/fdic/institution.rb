@@ -24,5 +24,13 @@ module FDIC
     currency_field :total_assets, 'totalAssets'
     currency_field :total_deposits, "totalDeposits"
 
+    def history_events
+      FDIC.find_history_events(legal_name, cert_number)
+    end
+
+    def branches
+      FDIC.find_branches(cert_number)
+    end
+
   end
 end
