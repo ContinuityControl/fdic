@@ -23,6 +23,14 @@ module FDIC
                        '$filter' => "certNumber eq #{cert_number}"})
     end
 
+    def find_branches(cert_number)
+      self.class.get('/Branch',
+                     query:
+                     { '$inlinecount' => 'allpages',
+                       '$format' => 'json',
+                       '$filter' => "certNumber eq #{cert_number}"})
+    end
+
     def find_history_events(bank_name, cert_number)
       filter = "legalName eq '#{bank_name.upcase}' and certNumber eq #{cert_number}"
       self.class.get('/History',

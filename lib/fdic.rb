@@ -5,6 +5,7 @@ require 'fdic/client'
 require 'fdic/record'
 require 'fdic/bank'
 require 'fdic/institution'
+require 'fdic/branch'
 require 'fdic/history_event'
 
 module FDIC
@@ -20,6 +21,13 @@ module FDIC
     resp = Client.new.find_institution(cert_number)
     resp['d']['results'].map { |result|
       FDIC::Institution.new(result)
+    }
+  end
+
+  def find_branches(cert_number)
+    resp = Client.new.find_branches(cert_number)
+    resp['d']['results'].map { |result|
+      FDIC::Branch.new(result)
     }
   end
 
