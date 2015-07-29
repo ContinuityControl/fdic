@@ -1,7 +1,8 @@
 # FDIC
 
-The FDIC [lets you find information on
-Banks](https://research.fdic.gov/bankfind/index.html). Their site uses [a JSON
+The FDIC [lets you find information on FDIC-insured banking
+institutions](https://research.fdic.gov/bankfind/index.html). Their site uses
+[a JSON
 API](http://www.programmableweb.com/news/fdic-bank-data-api-available-official-announcement-pending/2015/02/06)
 to look up financial information, branch information, etc.
 
@@ -25,18 +26,33 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You can look up a Bank by its name:
 
-## Development
+```
+FDIC.find_bank('Dedicated Community Bank')  #=> [FDIC::Bank, FDIC::Bank, ...]
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+You can look up an Institution by its FDIC Certificate number:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```
+FDIC.find_institution(26588)  #=> [FDIC::Institution, FDIC::Institution, ...]
+```
+
+You can look up a Bank's branches by its FDIC Certificate number:
+
+```
+FDIC.find_branches(25688)  #=> [FDIC::Branch, FDIC::Branch, ...]
+```
+
+You can look up a Bank's history by its name and FDIC Certificate number:
+
+```
+FDIC.find_history_events('Dedicated Community Bank', 26588)  #=> [FDIC::HistoryEvent, ...]
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/fdic.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/ContinuityControl/fdic.
 
 ## License
 
