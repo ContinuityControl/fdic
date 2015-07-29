@@ -21,8 +21,8 @@ module FDIC
     date_field :report_date, "reportDate"  # This is NOT the date the query was made.
 
     int_field :office_count, "officeCount"
-    currency_field :total_assets, 'totalAssets'
-    currency_field :total_deposits, "totalDeposits"
+    currency_field :total_assets_in_thousands, 'totalAssets'
+    currency_field :total_deposits_in_thousands, "totalDeposits"
 
   end
 end
