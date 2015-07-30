@@ -18,7 +18,5 @@ module FDIC
 
     field :primary_regulatory_agency_check, :primaryRegulatoryAgencyCheck
     field :primary_regulatory_agency, :primaryRegulatoryAgency
-
-
   end
 end
