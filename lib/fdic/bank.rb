@@ -10,5 +10,9 @@ module FDIC
     field :zip
     field :office_count, :officeCount
     date_field :effective_date, :effectiveDate
+
+    def institution
+      FDIC.find_institution(cert_number).first
+    end
   end
 end
