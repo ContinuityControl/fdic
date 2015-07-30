@@ -11,8 +11,8 @@ module FDIC
     field :office_count, :officeCount
     date_field :effective_date, :effectiveDate
 
-    def institution
-      FDIC.find_institution(cert_number).first
+    def find_institution!
+      @institution ||= FDIC.find_institution(certificate_number).first
     end
   end
 end
