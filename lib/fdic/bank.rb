@@ -14,5 +14,9 @@ module FDIC
     def find_institution!
       @institution ||= FDIC.find_institution(certificate_number).first
     end
+
+    def find_history_events!
+      @history_events ||= FDIC.find_history_events(legal_name, certificate_number)
+    end
   end
 end
