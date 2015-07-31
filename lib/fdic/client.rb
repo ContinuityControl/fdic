@@ -12,7 +12,7 @@ module FDIC
                      query:
                      { '$inlinecount' => 'all',
                        '$format' => 'json',
-                       '$filter' => "(substringof('#{bank_name.upcase}',name))"})
+                       '$filter' => "(substringof('#{escape_single_quotes(bank_name.upcase)}',name))"})
     end
 
     def find_institution(certificate_number)
@@ -32,12 +32,21 @@ module FDIC
     end
 
     def find_history_events(bank_name, certificate_number)
-      filter = "legalName eq '#{bank_name.upcase}' and certNumber eq #{certificate_number}"
+      filter = "legalName eq '#{escape_single_quotes(bank_name.upcase)}' and certNumber eq #{certificate_number}"
       self.class.get('/History',
                      query:
                      { '$inlinecount' => 'all',
                        '$format' => 'json',
                        '$filter' => filter})
+    end
+
+    private
+
+    def escape_single_quotes(string)
+      # Urm? The API 500's if you have a single-quote in name: "People's United Bank."
+      # Their web forms double-up the single-quotes to escape them.
+      # NB: let's keep an eye on this flim-flam, and be sure it doesn't get out of hand.
+      string.gsub("'", "''")
     end
   end
 end
