@@ -3,6 +3,10 @@ module FDIC
     field :fdic_id, :id
     field(:legal_name, :legalName, &:strip)
     field :certificate_number, :certNumber
+
+    field :supervising_authority, :FACodeText
+    field :supervising_authority_code, :FACode
+
     field(:active?, 'activeFlag') { |value| value == 'Y' }
     date_field :inactive_as_of_date, "inActiveAsofDt"
     field :address
