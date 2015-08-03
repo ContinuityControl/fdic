@@ -2,16 +2,15 @@ module FDIC
   class Record
     def initialize(attributes)
       @attributes = attributes
+      @attributes.freeze
     end
 
-    def [](key)
-      @attributes[key.to_s]
-    end
+    attr_reader :attributes
 
     def self.field(method_name, response_key=method_name, &munger)
       munger ||= lambda { |x| x }
       define_method(method_name) {
-        value = self[response_key]
+        value = attributes[response_key.to_s]
         value && munger.call(value)
       }
     end
@@ -31,7 +30,7 @@ module FDIC
     end
 
     def uri
-      self['__metadata']['uri']
+      attributes['__metadata']['uri']
     end
   end
 end
