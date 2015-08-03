@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Thomas Reznick", "Dan Bernier"]
   spec.email         = ["treznick@continuity.net", "dbernier@continuity.net"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A Ruby client to the FDIC's BankFind API}
+  spec.description   = %q{The FDIC recently exposed a JSON-over-HTTP API behind its BankFind website. This gem makes that API easy to use from Ruby.}
+  spec.homepage      = "https://github.com/ContinuityControl/fdic"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
