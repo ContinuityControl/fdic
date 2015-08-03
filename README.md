@@ -8,6 +8,10 @@ to look up financial information, branch information, etc.
 
 This gem is a ruby client to that API.
 
+If you need help understanding the data returned by that API, and this gem, it
+can help to look at [the FDIC's BankFind glossary of
+terms](https://research.fdic.gov/bankfind/glossary.html).
+
 ## Installation
 
 Add this line to your application's Gemfile:
