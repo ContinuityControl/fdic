@@ -11,7 +11,8 @@ to look up financial information, branch information, etc.
 
 This gem is a ruby client to that API. It's totally unaffiliated with the FDIC.
 It's open source, so anyone can use it, and anyone can help maintain it. At
-this point, it's maintained by the developers at
+this point, it's maintained by [the
+developers](http://engineering.continuity.net/) at
 [Continuity](http://continuity.net).
 
 If you need help understanding the data returned by that API, and this gem, it
