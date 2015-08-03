@@ -37,9 +37,5 @@ module FDIC
     def find_branches!
       @branches ||= FDIC.find_branches(certificate_number)
     end
-
-    def find_bank!
-      @bank ||= FDIC.find_bank(legal_name)
-    end
   end
 end
