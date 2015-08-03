@@ -44,7 +44,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   fdic!
   rake (~> 10.0)
-  rspec
+  rspec (~> 3.0)
 
 BUNDLED WITH
    1.10.3
