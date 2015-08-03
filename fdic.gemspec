@@ -6,7 +6,7 @@ require 'fdic/version'
 Gem::Specification.new do |spec|
   spec.name          = "fdic"
   spec.version       = FDIC::VERSION
-  spec.authors       = ["Thomas Reznick", "Dan Bernier"]
+  spec.authors       = ["Tom Reznick", "Dan Bernier"]
   spec.email         = ["treznick@continuity.net", "dbernier@continuity.net"]
 
   spec.summary       = %q{A Ruby client to the FDIC's BankFind API}
