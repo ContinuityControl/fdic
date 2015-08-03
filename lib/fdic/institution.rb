@@ -23,6 +23,8 @@ module FDIC
     int_field :office_count, "officeCount"
     currency_field :total_assets_in_thousands, 'totalAssets'
     currency_field :total_deposits_in_thousands, "totalDeposits"
+    currency_field :domestic_deposits_in_thousands, "domesticDeposits"
+    currency_field :bank_equity_capital_in_thousands, "bankEquityCapital"
 
     def find_history_events!
       @history_events ||= FDIC.find_history_events(legal_name, certificate_number)

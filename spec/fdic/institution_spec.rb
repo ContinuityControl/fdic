@@ -32,7 +32,7 @@ describe FDIC::Institution do
      "insuredFrmDt"=>"1952-09-24 00:00:00.0",
      "returnOnEquity"=>"11.35",
      "county"=>"Hall",
-     "domesticDeposits"=>"459705.0",
+     "domesticDeposits"=>"479999.0",
      "active"=>"1.0",
      "ultCertCity"=>"Wood River",
      "charterNumber"=>"0",
@@ -95,6 +95,9 @@ describe FDIC::Institution do
 
     expect(institution.total_assets_in_thousands).to eq(617581.0)
     expect(institution.total_deposits_in_thousands).to eq(459705.0)
+    expect(institution.domestic_deposits_in_thousands).to eq(479999.0)
+    expect(institution.bank_equity_capital_in_thousands).to eq(91419.0)
+
     expect(institution.uri).to eq("http://odata.fdic.gov:80/v1/financial-institution/Institution('11183')")
   end
 
