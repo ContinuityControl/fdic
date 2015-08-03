@@ -6,7 +6,10 @@ institutions](https://research.fdic.gov/bankfind/index.html). Their site uses
 API](http://www.programmableweb.com/news/fdic-bank-data-api-available-official-announcement-pending/2015/02/06)
 to look up financial information, branch information, etc.
 
-This gem is a ruby client to that API.
+This gem is a ruby client to that API. It's totally unaffiliated with the FDIC.
+It's open source, so anyone can use it, and anyone can help maintain it. At
+this point, it's maintained by the developers at
+[Continuity](http://continuity.net).
 
 If you need help understanding the data returned by that API, and this gem, it
 can help to look at [the FDIC's BankFind glossary of
