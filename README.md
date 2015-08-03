@@ -26,27 +26,31 @@ Or install it yourself as:
 
 ## Usage
 
-You can look up a Bank by its name:
+You can look up a Bank by its name, and find all matching Banks:
 
 ```
+# Returns an Array:
 FDIC.find_bank('Dedicated Community Bank')  #=> [FDIC::Bank, FDIC::Bank, ...]
 ```
 
 You can look up an Institution by its FDIC Certificate number:
 
 ```
-FDIC.find_institution(26588)  #=> [FDIC::Institution, FDIC::Institution, ...]
+# Returns only one:
+FDIC.find_institution(26588)  #=> FDIC::Institution
 ```
 
 You can look up a Bank's branches by its FDIC Certificate number:
 
 ```
+# Returns an Array:
 FDIC.find_branches(25688)  #=> [FDIC::Branch, FDIC::Branch, ...]
 ```
 
 You can look up a Bank's history by its name and FDIC Certificate number:
 
 ```
+# Returns an Array:
 FDIC.find_history_events('Dedicated Community Bank', 26588)  #=> [FDIC::HistoryEvent, ...]
 ```
 
