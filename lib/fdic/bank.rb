@@ -12,7 +12,7 @@ module FDIC
     date_field :effective_date, :effectiveDate
 
     def find_institution!
-      @institution ||= FDIC.find_institution(certificate_number).first
+      @institution ||= FDIC.find_institution(certificate_number)
     end
 
     def find_history_events!

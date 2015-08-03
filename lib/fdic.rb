@@ -19,9 +19,8 @@ module FDIC
 
   def find_institution(certificate_number)
     resp = Client.new.find_institution(certificate_number)
-    resp['d']['results'].map { |result|
-      FDIC::Institution.new(result)
-    }
+    result = resp['d']['results'].first
+    FDIC::Institution.new(result)
   end
 
   def find_branches(certificate_number)
