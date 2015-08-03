@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/github/ContinuityControl/fdic/badges/gpa.svg)](https://codeclimate.com/github/ContinuityControl/fdic)
+[![Test Coverage](https://codeclimate.com/github/ContinuityControl/fdic/badges/coverage.svg)](https://codeclimate.com/github/ContinuityControl/fdic/coverage)
+
 # FDIC
 
 The FDIC [lets you find information on FDIC-insured banking
