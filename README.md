@@ -37,33 +37,43 @@ Or install it yourself as:
 
 ## Usage
 
-You can look up a Bank by its name, and find all matching Banks:
+The FDIC API lets you find an Institution if you have its FDIC Certificate Number:
 
 ```
-# Returns an Array:
-FDIC.find_bank('Dedicated Community Bank')  #=> [FDIC::Bank, FDIC::Bank, ...]
+institution = FDIC.find_institution(26588)  #=> FDIC::Institution
 ```
 
-You can look up an Institution by its FDIC Certificate number:
+If you don't have the certificate number, you can search for a Bank by name, and get back all matching Banks:
 
 ```
-# Returns only one:
-FDIC.find_institution(26588)  #=> FDIC::Institution
+banks = FDIC.find_bank('Dedicated Community Bank')  #=> [FDIC::Bank, FDIC::Bank, ...]
 ```
 
-You can look up a Bank's branches by its FDIC Certificate number:
+Once you have a Bank, you can get its Institution, which has much more data available:
 
 ```
-# Returns an Array:
-FDIC.find_branches(25688)  #=> [FDIC::Branch, FDIC::Branch, ...]
+institution = banks.first.find_institution!  # Bang, because it's another network request
 ```
 
-You can look up a Bank's history by its name and FDIC Certificate number:
+The API also exposes information about an Institution's branches, and its history. You can query both of these on the FDIC module directly, or on the Institution:
 
 ```
-# Returns an Array:
-FDIC.find_history_events('Dedicated Community Bank', 26588)  #=> [FDIC::HistoryEvent, ...]
+institution.find_branches!  #=> [FDIC::Branch, FDIC::Branch, ...]
+FDIC.find_branches(25688)   #=> [FDIC::Branch, FDIC::Branch, ...]
+
+institution.find_history_events!                              #=> [FDIC::HistoryEvent, ...]
+FDIC.find_history_events('Dedicated Community Bank', 26588)   #=> [FDIC::HistoryEvent, ...]
 ```
+
+Since a `Bank` knows its certificate number, it can look up its branch and history information, too.
+
+```
+# These work just like they do on Institutions:
+bank.find_branches!
+bank.find_history_events!
+```
+
+There are more fields exposed in the Institution API then what we've exposed. Where the field names are obscure or acronym-y, we'd like to clarify them; since we're pre-1.0, if we haven't looked up a field's meaning quite yet, we're holding off. (You can still get all the fields via `#attributes`.)
 
 ## Contributing
 
