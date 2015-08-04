@@ -18,5 +18,9 @@ module FDIC
     def find_history_events!
       @history_events ||= FDIC.find_history_events(legal_name, certificate_number)
     end
+
+    def find_branches!
+      @branches ||= FDIC.find_branches(certificate_number)
+    end
   end
 end
