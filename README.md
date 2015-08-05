@@ -1,5 +1,6 @@
 [![Code Climate](https://codeclimate.com/github/ContinuityControl/fdic/badges/gpa.svg)](https://codeclimate.com/github/ContinuityControl/fdic)
 [![Test Coverage](https://codeclimate.com/github/ContinuityControl/fdic/badges/coverage.svg)](https://codeclimate.com/github/ContinuityControl/fdic/coverage)
+[![Build Status](https://travis-ci.org/ContinuityControl/fdic.svg?branch=master)](https://travis-ci.org/ContinuityControl/fdic)
 
 # FDIC
 
