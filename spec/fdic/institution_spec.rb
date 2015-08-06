@@ -97,10 +97,10 @@ describe FDIC::Institution do
 
     expect(institution.office_count).to eq(20)
 
-    expect(institution.total_assets_in_thousands).to eq(617581.0)
-    expect(institution.total_deposits_in_thousands).to eq(459705.0)
-    expect(institution.domestic_deposits_in_thousands).to eq(479999.0)
-    expect(institution.bank_equity_capital_in_thousands).to eq(91419.0)
+    expect(institution.total_assets).to eq(617581000.0)
+    expect(institution.total_deposits).to eq(459705000.0)
+    expect(institution.domestic_deposits).to eq(479999000.0)
+    expect(institution.bank_equity_capital).to eq(91419000.0)
 
     expect(institution.uri).to eq("http://odata.fdic.gov:80/v1/financial-institution/Institution('11183')")
   end
