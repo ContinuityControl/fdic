@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FDIC::HistoryEvent do
+describe FDIC::BankFind::HistoryEvent do
   let(:api_result) {
     {"__metadata"=>
      {
@@ -45,7 +45,7 @@ describe FDIC::HistoryEvent do
     }
   }
 
-  let(:history_event) { FDIC::HistoryEvent.new(api_result) }
+  let(:history_event) { FDIC::BankFind::HistoryEvent.new(api_result) }
 
   it 'parses data out correctly' do
     expect(history_event.fdic_id).to eq('43690')

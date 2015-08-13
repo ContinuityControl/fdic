@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FDIC::Institution do
+describe FDIC::BankFind::Institution do
   let(:api_result) {
     {"__metadata"=>
      {"uri"=> "http://odata.fdic.gov:80/v1/financial-institution/Institution('11183')",
@@ -36,7 +36,7 @@ describe FDIC::Institution do
      "active"=>"1.0",
      "ultCertCity"=>"Wood River",
      "charterNumber"=>"0",
-     "FACode"=>"FDIC",
+     "FACode"=>"FDIC::BankFind",
      "insuredToDt"=>"9999-12-31 00:00:00.0",
      "state"=>"NE",
      "quarterlyReturnOnEquity"=>"11.35",
@@ -68,14 +68,14 @@ describe FDIC::Institution do
     }
   }
 
-  let(:institution) { FDIC::Institution.new(api_result) }
+  let(:institution) { FDIC::BankFind::Institution.new(api_result) }
 
   it 'parses data out correctly' do
     expect(institution.fdic_id).to eq('11183')
     expect(institution.legal_name).to eq('Heritage Bank')
     expect(institution.certificate_number).to eq('17145')
     expect(institution.supervising_authority).to eq('Federal Deposit Insurance Corporation')
-    expect(institution.supervising_authority_code).to eq('FDIC')
+    expect(institution.supervising_authority_code).to eq('FDIC::BankFind')
 
 
     expect(institution).to be_active

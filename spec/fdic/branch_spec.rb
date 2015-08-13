@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FDIC::Branch do
+describe FDIC::BankFind::Branch do
   let(:api_result) {
     { "__metadata"=> {
       "uri"=>"http://odata.fdic.gov:80/v1/financial-institution/Branch('10345')",
@@ -22,7 +22,7 @@ describe FDIC::Branch do
     }
   }
 
-  let(:branch) { FDIC::Branch.new(api_result) }
+  let(:branch) { FDIC::BankFind::Branch.new(api_result) }
 
   it 'parses data out correctly' do
     expect(branch.fdic_id).to eq('10345')

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FDIC::Bank do
+describe FDIC::BankFind::Bank do
   let(:api_result) {
     {
       "__metadata"=> {
@@ -20,7 +20,7 @@ describe FDIC::Bank do
     }
   }
 
-  let(:bank) { FDIC::Bank.new(api_result) }
+  let(:bank) { FDIC::BankFind::Bank.new(api_result) }
 
   it 'parses data out correctly' do
     expect(bank.fdic_id).to eq('8950')

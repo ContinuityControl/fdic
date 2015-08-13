@@ -38,16 +38,18 @@ Or install it yourself as:
 
 ## Usage
 
+Currently all of our features are namespaced under the `FDIC::BankFind` module
+
 The FDIC API lets you find an Institution if you have its FDIC Certificate Number:
 
 ```
-institution = FDIC.find_institution(26588)  #=> FDIC::Institution
+institution = FDIC::BankFind.find_institution(26588)  #=> FDIC::BankFind::Institution
 ```
 
 If you don't have the certificate number, you can search for a Bank by name, and get back all matching Banks:
 
 ```
-banks = FDIC.find_bank('Dedicated Community Bank')  #=> [FDIC::Bank, FDIC::Bank, ...]
+banks = FDIC::BankFind.find_bank('Dedicated Community Bank')  #=> [FDIC::BankFind::Bank, FDIC::BankFind::Bank, ...]
 ```
 
 Once you have a Bank, you can get its Institution, which has much more data available:
@@ -56,14 +58,14 @@ Once you have a Bank, you can get its Institution, which has much more data avai
 institution = banks.first.find_institution!  # Bang, because it's another network request
 ```
 
-The API also exposes information about an Institution's branches, and its history. You can query both of these on the FDIC module directly, or on the Institution:
+The API also exposes information about an Institution's branches, and its history. You can query both of these on the FDIC::BankFind module directly, or on the Institution:
 
 ```
-institution.find_branches!  #=> [FDIC::Branch, FDIC::Branch, ...]
-FDIC.find_branches(25688)   #=> [FDIC::Branch, FDIC::Branch, ...]
+institution.find_branches!  #=> [FDIC::BankFind::Branch, FDIC::BankFind::Branch, ...]
+FDIC::BankFind.find_branches(25688)   #=> [FDIC::BankFind::Branch, FDIC::BankFind::Branch, ...]
 
-institution.find_history_events!                              #=> [FDIC::HistoryEvent, ...]
-FDIC.find_history_events('Dedicated Community Bank', 26588)   #=> [FDIC::HistoryEvent, ...]
+institution.find_history_events!                              #=> [FDIC::BankFind::HistoryEvent, ...]
+FDIC::BankFind.find_history_events('Dedicated Community Bank', 26588)   #=> [FDIC::BankFind::HistoryEvent, ...]
 ```
 
 Since a `Bank` knows its certificate number, it can look up its branch and history information, too.

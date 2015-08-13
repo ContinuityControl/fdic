@@ -21,19 +21,21 @@
 =end
 
 module FDIC
-  class Branch < Record
-    field :fdic_id, 'id'
-    field(:branch_name, 'branchName', &:strip)
-    field :certificate_number, :certNumber
+  module BankFind
+    class Branch < Record
+      field :fdic_id, 'id'
+      field(:branch_name, 'branchName', &:strip)
+      field :certificate_number, :certNumber
 
-    field :address
-    field :city
-    field :county
-    field :state
-    field :zip
+      field :address
+      field :city
+      field :county
+      field :state
+      field :zip
 
-    field :branch_number, :branchNum
-    date_field :established_date, :establishedDate
-    date_field :acquired_date, :acquiredDate
+      field :branch_number, :branchNum
+      date_field :established_date, :establishedDate
+      date_field :acquired_date, :acquiredDate
+    end
   end
 end
