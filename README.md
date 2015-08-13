@@ -42,25 +42,32 @@ Currently all of our features are namespaced under the `FDIC::BankFind` module
 
 The FDIC API lets you find an Institution if you have its FDIC Certificate Number:
 
-```
+```ruby
 institution = FDIC::BankFind.find_institution(26588)  #=> FDIC::BankFind::Institution
+```
+
+If your certificate number is incorrect, this will raise an exception:
+
+```ruby
+institution = FDIC::BankFind.find_institution(26588)  #=> FDIC::BankFind::Institution
+# raises FDIC::Exceptions::RecordNotFound
 ```
 
 If you don't have the certificate number, you can search for a Bank by name, and get back all matching Banks:
 
-```
+```ruby
 banks = FDIC::BankFind.find_bank('Dedicated Community Bank')  #=> [FDIC::BankFind::Bank, FDIC::BankFind::Bank, ...]
 ```
 
 Once you have a Bank, you can get its Institution, which has much more data available:
 
-```
+```ruby
 institution = banks.first.find_institution!  # Bang, because it's another network request
 ```
 
 The API also exposes information about an Institution's branches, and its history. You can query both of these on the FDIC::BankFind module directly, or on the Institution:
 
-```
+```ruby
 institution.find_branches!  #=> [FDIC::BankFind::Branch, FDIC::BankFind::Branch, ...]
 FDIC::BankFind.find_branches(25688)   #=> [FDIC::BankFind::Branch, FDIC::BankFind::Branch, ...]
 
@@ -70,7 +77,7 @@ FDIC::BankFind.find_history_events('Dedicated Community Bank', 26588)   #=> [FDI
 
 Since a `Bank` knows its certificate number, it can look up its branch and history information, too.
 
-```
+```ruby
 # These work just like they do on Institutions:
 bank.find_branches!
 bank.find_history_events!
@@ -85,4 +92,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Contin
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
