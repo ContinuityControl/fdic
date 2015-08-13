@@ -1,6 +1,7 @@
 require 'httparty'
 require 'logger'
 require "fdic/version"
+require 'fdic/exceptions'
 require 'fdic/client'
 require 'fdic/record'
 require 'fdic/bank'
@@ -20,8 +21,12 @@ module FDIC
 
     def find_institution(certificate_number)
       resp = Client.new.find_institution(certificate_number)
-      result = resp['d']['results'].first
-      Institution.new(result)
+      results = resp.fetch('d').fetch('results')
+      if results.empty? || results.nil?
+        raise FDIC::Exceptions::RecordNotFound, "#{certificate_number} appears to be an invalid certificate number"
+      else
+        Institution.new(results.first)
+      end
     end
 
     def find_branches(certificate_number)
