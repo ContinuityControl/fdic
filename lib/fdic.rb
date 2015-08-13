@@ -23,7 +23,7 @@ module FDIC
       resp = Client.new.find_institution(certificate_number)
       results = resp.fetch('d').fetch('results')
       if results.empty? || results.nil?
-        raise FDIC::Exceptions::RecordNotFound
+        raise FDIC::Exceptions::RecordNotFound, "#{certificate_number} appears to be an invalid certificate number"
       else
         Institution.new(results.first)
       end
