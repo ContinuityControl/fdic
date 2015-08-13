@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fdic (0.4.0)
+    fdic (0.5.0)
       httparty (~> 0.13)
 
 GEM
