@@ -36,6 +36,5 @@ describe FDIC::BankFind::Branch do
     expect(branch.branch_number).to be_nil
     expect(branch.established_date).to eq(Date.new(1922, 1, 30))
     expect(branch.acquired_date).to be_nil
-    expect(branch.uri).to eq("http://odata.fdic.gov:80/v1/financial-institution/Branch('10345')")
   end
 end

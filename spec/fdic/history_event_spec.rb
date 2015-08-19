@@ -54,7 +54,6 @@ describe FDIC::BankFind::HistoryEvent do
     expect(history_event.city).to eq('ANCHORAGE')
     expect(history_event.state).to eq('AK')
     expect(history_event.effective_date).to eq(Date.new(1955, 1, 1))
-    expect(history_event.uri).to eq("http://odata.fdic.gov:80/v1/financial-institution/History('43690')")
   end
 
   context 'when the legal name has extra whitespace' do

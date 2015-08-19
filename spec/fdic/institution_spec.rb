@@ -101,8 +101,6 @@ describe FDIC::BankFind::Institution do
     expect(institution.total_deposits).to eq(459705000.0)
     expect(institution.domestic_deposits).to eq(479999000.0)
     expect(institution.bank_equity_capital).to eq(91419000.0)
-
-    expect(institution.uri).to eq("http://odata.fdic.gov:80/v1/financial-institution/Institution('11183')")
   end
 
   context 'when the legal name has extra whitespace' do

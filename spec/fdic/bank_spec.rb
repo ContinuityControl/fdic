@@ -33,7 +33,6 @@ describe FDIC::BankFind::Bank do
     expect(bank.zip).to eq('68970')
     expect(bank.office_count).to be_nil
     expect(bank.effective_date).to be_nil
-    expect(bank.uri).to eq("http://odata.fdic.gov:80/v1/financial-institution/Bank('8950')")
   end
 
   context 'when the legal name has extra whitespace' do

@@ -31,10 +31,6 @@ module FDIC
           Date.parse(value)
         }
       end
-
-      def uri
-        attributes['__metadata']['uri']
-      end
     end
   end
 end
