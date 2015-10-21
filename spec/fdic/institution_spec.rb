@@ -74,8 +74,8 @@ describe FDIC::BankFind::Institution do
     expect(institution.fdic_id).to eq('11183')
     expect(institution.legal_name).to eq('Heritage Bank')
     expect(institution.certificate_number).to eq('17145')
-    expect(institution.supervising_authority).to eq('Federal Deposit Insurance Corporation')
-    expect(institution.supervising_authority_code).to eq('FDIC::BankFind')
+    expect(institution.supervisory_agency).to eq('Federal Deposit Insurance Corporation')
+    expect(institution.supervisory_agency_code).to eq('FDIC::BankFind')
 
 
     expect(institution).to be_active
