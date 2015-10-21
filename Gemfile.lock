@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fdic (0.6.0)
+    fdic (0.7.0)
       httparty (~> 0.13)
 
 GEM
@@ -11,7 +11,7 @@ GEM
       simplecov (>= 0.7.1, < 1.0.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    httparty (0.13.5)
+    httparty (0.13.7)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     json (1.8.3)
@@ -47,4 +47,4 @@ DEPENDENCIES
   rspec (~> 3.0)
 
 BUNDLED WITH
-   1.10.3
+   1.10.6
