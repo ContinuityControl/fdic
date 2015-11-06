@@ -5,6 +5,7 @@ require 'fdic/bank_find/bank'
 require 'fdic/bank_find/institution'
 require 'fdic/bank_find/branch'
 require 'fdic/bank_find/history_event'
+require 'fdic/bank_find/schema_validators'
 
 module FDIC
   module BankFind
