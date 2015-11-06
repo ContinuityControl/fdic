@@ -1,0 +1,188 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "description": "Generated from history_event_response.json with shasum 35b1f7d6d91ef88b3fb8b9d06c23f6006906c32b",
+  "type": "object",
+  "required": true,
+  "properties": {
+    "d": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "results": {
+          "type": "array",
+          "required": true,
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "__metadata": {
+                "type": "object",
+                "required": true,
+                "properties": {
+                  "uri": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "type": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+              },
+              "certNumber": {
+                "type": "string",
+                "required": true
+              },
+              "orgDvstLegalName": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "primaryRegulatoryAgencyCheck": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "certClickable": {
+                "type": "string",
+                "required": true
+              },
+              "state": {
+                "type": "string",
+                "required": true
+              },
+              "acqCertClickable": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "primaryRegulatoryAgency": {
+                "type": "string",
+                "required": true
+              },
+              "currentInsurance": {
+                "type": "string",
+                "required": true
+              },
+              "city": {
+                "type": "string",
+                "required": true
+              },
+              "id": {
+                "type": "string",
+                "required": true
+              },
+              "instClassCode": {
+                "type": "string",
+                "required": true
+              },
+              "instClassDescription": {
+                "type": "string",
+                "required": true
+              },
+              "currentInsuranceCheck": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "orgDvstCertNum": {
+                "type": "string",
+                "required": true
+              },
+              "orgTypeDescrption": {
+                "type": "string",
+                "required": true
+              },
+              "changeDesc": {
+                "type": "string",
+                "required": true
+              },
+              "uniqDvstCert": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "orgDvstCity": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "orgAcqLegalName": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "dvstCertClickable": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "legalName": {
+                "type": "string",
+                "required": true
+              },
+              "changeCode": {
+                "type": "string",
+                "required": true
+              },
+              "check350HappenedOn211Day": {
+                "type": "boolean",
+                "required": false
+              },
+              "uniqCert": {
+                "type": "string",
+                "required": true
+              },
+              "orgAcqCertNum": {
+                "type": "string",
+                "required": true
+              },
+              "orgDvstState": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "eventDescription": {
+                "type": "string",
+                "required": true
+              },
+              "movedLocationMessage": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "orgAcqState": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "trustPowerCheck": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "orgEffDate": {
+                "type": "string",
+                "required": true
+              },
+              "prevLegalName": {
+                "type": "string",
+                "required": true
+              },
+              "orgAcqCity": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "uniqAcqCert": {
+                "type": ["string","null"],
+                "required": true
+              },
+              "trustPower": {
+                "type": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "__count": {
+          "type": "string",
+          "required": true
+        },
+        "__next": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  }
+}
