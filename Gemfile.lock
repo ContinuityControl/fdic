@@ -3,10 +3,12 @@ PATH
   specs:
     fdic (0.8.2)
       httparty (~> 0.13)
+      json-schema (~> 2.5.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.3.8)
     codeclimate-test-reporter (0.4.8)
       simplecov (>= 0.7.1, < 1.0.0)
     diff-lcs (1.2.5)
@@ -15,6 +17,8 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     json (1.8.3)
+    json-schema (2.5.1)
+      addressable (~> 2.3.7)
     multi_xml (0.5.5)
     rake (10.4.2)
     rspec (3.4.0)
