@@ -9,6 +9,8 @@ module FDIC
 
         def schema_valid!
           JSON::Validator.validate!(schema, response)
+          #JSON::Validator.validate! will return true if it is successful, or raise if there is an error. Swallow true and return nil otherwise
+          nil
         end
 
         protected

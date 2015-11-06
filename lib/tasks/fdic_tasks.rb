@@ -1,3 +1,4 @@
+require 'fdic'
 module FDIC
   class FDICTasks
     include Rake::DSL if defined? Rake::DSL
@@ -5,8 +6,7 @@ module FDIC
       namespace :fdic do
         desc "Verify Schema"
         task(:validate_schema!) do
-puts "hello from tomicorn"
-          #::FDIC::BankFind.validate_schema!
+          ::FDIC::BankFind.validate_schema!
         end
       end
     end

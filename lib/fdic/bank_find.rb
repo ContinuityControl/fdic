@@ -41,6 +41,20 @@ module FDIC
       }
     end
 
+    def validate_schema!
+      FDIC::BankFind::SchemaValidators::InstitutionValidator.new.schema_valid!
+      FDIC::BankFind::SchemaValidators::BankValidator.new.schema_valid!
+      FDIC::BankFind::SchemaValidators::HistoryEventValidator.new.schema_valid!
+      FDIC::BankFind::SchemaValidators::BranchValidator.new.schema_valid!
+    end
+
+    def validate_schema?
+      FDIC::BankFind::SchemaValidators::InstitutionValidator.new.schema_valid? &&
+      FDIC::BankFind::SchemaValidators::BankValidator.new.schema_valid? &&
+      FDIC::BankFind::SchemaValidators::HistoryEventValidator.new.schema_valid? &&
+      FDIC::BankFind::SchemaValidators::BranchValidator.new.schema_valid?
+    end
+
     extend self
   end
 end
