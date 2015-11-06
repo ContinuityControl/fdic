@@ -14,7 +14,7 @@ module FDIC
         protected
 
         def response
-          @response ||= Client.new.send(client_method, client_method_arguments)
+          @response ||= Client.new.send(client_method, *client_method_arguments)
         end
       end
     end
