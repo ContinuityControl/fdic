@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "description": "Generated from branch_response.json with shasum fa779f9bbd4882f5d318d776aecca9ba0c8fac4b",
+  "type": "object",
+  "required": true,
+  "properties": {
+    "d": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "results": {
+          "type": "array",
+          "required": true,
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "__metadata": {
+                "type": "object",
+                "required": true,
+                "properties": {
+                  "uri": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "type": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+              },
+              "certNumber": {
+                "type": "string",
+                "required": true
+              },
+              "zip": {
+                "type": "string",
+                "required": true
+              },
+              "establishedDate": {
+                "type": "string",
+                "required": true
+              },
+              "branchNum": {
+                "type": ["string", "null"],
+                "required": false
+              },
+              "state": {
+                "type": "string",
+                "required": true
+              },
+              "city": {
+                "type": "string",
+                "required": true
+              },
+              "id": {
+                "type": "string",
+                "required": true
+              },
+              "fiUninum": {
+                "type": "string",
+                "required": true
+              },
+              "address": {
+                "type": "string",
+                "required": true
+              },
+              "county": {
+                "type": "string",
+                "required": true
+              },
+              "branchName": {
+                "type": "string",
+                "required": true
+              },
+              "acquiredDate": {
+                "type": ["string", "null"],
+                "required": false
+              },
+              "servTypeCd": {
+                "type": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "__count": {
+          "type": "string",
+          "required": true
+        },
+        "__next": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  }
+}
