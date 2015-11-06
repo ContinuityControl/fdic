@@ -1,0 +1,281 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "description": "Generated from institution_response.json with shasum 86f71da403d71d62b757406da1d687d0661dd0e3",
+  "type": "object",
+  "required": true,
+  "properties": {
+    "d": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "results": {
+          "type": "array",
+          "required": true,
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "__metadata": {
+                "type": "object",
+                "required": true,
+                "properties": {
+                  "uri": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "type": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+              },
+              "changeCodes": {
+                "type": "string",
+                "required": true
+              },
+              "establishedDate": {
+                "type": "string",
+                "required": true
+              },
+              "certNumber": {
+                "type": "string",
+                "required": true
+              },
+              "asOfDate": {
+                "type": "string",
+                "required": true
+              },
+              "acqName": {
+                "type": "string",
+                "required": true
+              },
+              "forOffCnt": {
+                "type": "string",
+                "required": true
+              },
+              "instFinLegalName": {
+                "type": "string",
+                "required": true
+              },
+              "insuredDate": {
+                "type": "string",
+                "required": true
+              },
+              "city": {
+                "type": "string",
+                "required": true
+              },
+              "acqCert": {
+                "type": "string",
+                "required": true
+              },
+              "instClassCode": {
+                "type": "string",
+                "required": true
+              },
+              "highRegulatoryHolder": {
+                "type": "string",
+                "required": true
+              },
+              "domOffCnt": {
+                "type": "string",
+                "required": true
+              },
+              "legalName": {
+                "type": "string",
+                "required": true
+              },
+              "ultCertState": {
+                "type": "string",
+                "required": true
+              },
+              "netIncome": {
+                "type": "string",
+                "required": true
+              },
+              "ultCertName": {
+                "type": "string",
+                "required": true
+              },
+              "ultCertNum": {
+                "type": "string",
+                "required": true
+              },
+              "totalDeposits": {
+                "type": "string",
+                "required": true
+              },
+              "status": {
+                "type": ["string", "null"]
+              },
+              "bankEquityCapital": {
+                "type": "string",
+                "required": true
+              },
+              "FACodeText": {
+                "type": "string",
+                "required": true
+              },
+              "fedReserveID": {
+                "type": "string",
+                "required": true
+              },
+              "insuredFrmDt": {
+                "type": "string",
+                "required": true
+              },
+              "returnOnEquity": {
+                "type": "string",
+                "required": true
+              },
+              "county": {
+                "type": "string",
+                "required": true
+              },
+              "domesticDeposits": {
+                "type": "string",
+                "required": true
+              },
+              "active": {
+                "type": "string",
+                "required": true
+              },
+              "ultCertCity": {
+                "type": "string",
+                "required": true
+              },
+              "charterNumber": {
+                "type": "string",
+                "required": true
+              },
+              "FACode": {
+                "type": "string",
+                "required": true
+              },
+              "insuredToDt": {
+                "type": "string",
+                "required": true
+              },
+              "state": {
+                "type": "string",
+                "required": true
+              },
+              "quarterlyReturnOnEquity": {
+                "type": "string",
+                "required": true
+              },
+              "preTaxReturnOnAssets": {
+                "type": "string",
+                "required": true
+              },
+              "id": {
+                "type": "string",
+                "required": true
+              },
+              "returnOnAssets": {
+                "type": "string",
+                "required": true
+              },
+              "inactive": {
+                "type": "string",
+                "required": true
+              },
+              "uniNum": {
+                "type": "string",
+                "required": true
+              },
+              "docketNumber": {
+                "type": "string",
+                "required": true
+              },
+              "webSite": {
+                "type": "string",
+                "required": true
+              },
+              "activeFlag": {
+                "type": "string",
+                "required": true
+              },
+              "reportDate": {
+                "type": "string",
+                "required": true
+              },
+              "changeDesc": {
+                "type": ["string", "null"]
+              },
+              "zip": {
+                "type": "string",
+                "required": true
+              },
+              "inActiveAsofDt": {
+                "type": "string",
+                "required": true
+              },
+              "changeCode": {
+                "type": "string",
+                "required": true
+              },
+              "othAreaOffCnt": {
+                "type": "string",
+                "required": true
+              },
+              "bankClassDesc": {
+                "type": "string",
+                "required": true
+              },
+              "ncuaID": {
+                "type": "string",
+                "required": true
+              },
+              "quarterlyNetIncome": {
+                "type": "string",
+                "required": true
+              },
+              "quarterlyPreTaxReturnOnAssets": {
+                "type": "string",
+                "required": true
+              },
+              "address": {
+                "type": "string",
+                "required": true
+              },
+              "totalAssets": {
+                "type": "string",
+                "required": true
+              },
+              "holdingCompany": {
+                "type": ["string", "null"]
+              },
+              "officeCount": {
+                "type": "string",
+                "required": true
+              },
+              "prevLegalName": {
+                "type": "string",
+                "required": true
+              },
+              "bankClass": {
+                "type": "string",
+                "required": true
+              },
+              "quarterlyReturnOnAssets": {
+                "type": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "__count": {
+          "type": "string",
+          "required": true
+        },
+        "__next": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  }
+}
