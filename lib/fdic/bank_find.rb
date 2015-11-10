@@ -46,6 +46,7 @@ module FDIC
       FDIC::BankFind::SchemaValidators::BankValidator.new.schema_valid!
       FDIC::BankFind::SchemaValidators::HistoryEventValidator.new.schema_valid!
       FDIC::BankFind::SchemaValidators::BranchValidator.new.schema_valid!
+      true
     end
 
     def validate_schema?
