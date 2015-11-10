@@ -4,7 +4,7 @@ module FDIC
       class InstitutionValidator < BaseValidator
         private
         def schema
-          './lib/fdic/bank_find/schemas/institution_response_schema.json'
+          File.join(File.dirname(__FILE__), '../schemas/institution_response_schema.json')
         end
 
         def client_method

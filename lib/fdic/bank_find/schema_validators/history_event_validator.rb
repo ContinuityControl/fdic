@@ -4,7 +4,7 @@ module FDIC
       class HistoryEventValidator < BaseValidator
         private
         def schema
-          './lib/fdic/bank_find/schemas/history_event_response_schema.json'
+          File.join(File.dirname(__FILE__), '../schemas/history_event_response_schema.json')
         end
 
         def client_method
