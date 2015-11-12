@@ -9,39 +9,48 @@ module FDIC
       #debug_output
 
       def find_bank(bank_name)
-        self.class.get('/Bank',
+        check_response(self.class.get('/Bank',
                        query:
                        { '$inlinecount' => 'all',
                          '$format' => 'json',
-                         '$filter' => "(substringof('#{escape_single_quotes(bank_name.upcase)}',name))"})
+                         '$filter' => "(substringof('#{escape_single_quotes(bank_name.upcase)}',name))"}))
       end
 
       def find_institution(certificate_number)
-        self.class.get('/Institution',
+        check_response(self.class.get('/Institution',
                        query:
                        { '$inlinecount' => 'all',
                          '$format' => 'json',
-                         '$filter' => "certNumber eq #{certificate_number}"})
+                         '$filter' => "certNumber eq #{certificate_number}"}))
       end
 
       def find_branches(certificate_number)
-        self.class.get('/Branch',
+        check_response(self.class.get('/Branch',
                        query:
                        { '$inlinecount' => 'allpages',
                          '$format' => 'json',
-                         '$filter' => "certNumber eq #{certificate_number}"})
+                         '$filter' => "certNumber eq #{certificate_number}"}))
       end
 
       def find_history_events(bank_name, certificate_number)
         filter = "legalName eq '#{escape_single_quotes(bank_name.upcase)}' and certNumber eq #{certificate_number}"
-        self.class.get('/History',
+        check_response(self.class.get('/History',
                        query:
                        { '$inlinecount' => 'all',
                          '$format' => 'json',
-                         '$filter' => filter})
+                         '$filter' => filter}))
       end
 
       private
+
+      def check_response(resp)
+        case resp.code
+        when 200...300
+          resp
+        when 500...600
+          raise FDIC::Exceptions::ServerError
+        end
+      end
 
       def escape_single_quotes(string)
         # Urm? The API 500's if you have a single-quote in name: "People's United Bank."

@@ -53,6 +53,19 @@ institution = FDIC::BankFind.find_institution(26588)  #=> FDIC::BankFind::Instit
 # raises FDIC::Exceptions::RecordNotFound
 ```
 
+Note, sometimes seemingly "valid" parameters will cause the FDIC to return a 500 error code.
+```ruby
+institution = FDIC::BankFIND.find_institution("DOG") # Not a number
+institution = FDIC::BankFIND.find_institution(1234567898798) # a number with more than 10 digits
+# the FDIC returns 500
+```
+
+When this happens, the gem will catch the error and raise an exception:
+```ruby
+institution = FDIC::BankFIND.find_institution(1234567898798) # a number with more than 10 digits
+# raises FDIC::Exceptions::ServerError
+```
+
 If you don't have the certificate number, you can search for a Bank by name, and get back all matching Banks:
 
 ```ruby
