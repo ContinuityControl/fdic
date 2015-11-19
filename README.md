@@ -101,6 +101,27 @@ bank.find_history_events!
 
 There are more fields exposed in the Institution API than what we've exposed. Where the field names are obscure or acronym-y, we'd like to clarify them; since we're pre-1.0, if we haven't looked up a field's meaning quite yet, we're holding off. (You can still get all the fields via `#attributes`.)
 
+## Schema Validation
+
+This gem heavily depends on the schema of an unpublished government API. As such, it's liable to break. To help prevent against this we've provided a top level `FDIC::BankFind.validate_schema?` method, returning `true` if the schema of the FDIC's unpublished API has changed. We also expose a similar method `FDIC::BankFind.validate_schema!` which will raise a meaningful exception if the schema is invalid.
+
+The gem provides an internal rake task, `rake fdic:validate_schema!` which calls `FDIC::BankFind.validate_schema!`. For the convenience of Rails users, we have used a Railtie to automatically provide this rake task in your application.
+
+Because the schema may change more suddenly than developers can check for, we've created a [very small application](https://github.com/ContinuityControl/api_schema_validator) that validates the schema of this gem and its sister gem, [ncua](https://github.com/ContinuityControl/ncua).
+
+The api_schema_validator application checks daily to see if the schema is invalid. It exposes a few handy endpoints, notably `/fdic/status`, which returns the follwing JSON:
+```json
+  {
+    "schema_good" : true
+  }
+  // OR
+  {
+    "schema_good" : false
+  }
+```
+
+and `/fdic/badge` which returns an svg status badge. In fact, you saw that badge at the top of this readme!
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/ContinuityControl/fdic.
