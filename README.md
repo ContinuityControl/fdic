@@ -5,7 +5,7 @@
 
 # FDIC
 ### Current API Status
-[![API Status](http://cc-api-schema-validator.herokuapp.com/fdic/badge)](http://cc-api-schema-validator.herokuapp.com/ncua/status)
+[![API Status](http://cc-api-schema-validator.herokuapp.com/fdic/badge)](http://cc-api-schema-validator.herokuapp.com/fdic/status)
 
 The FDIC [lets you find information on FDIC-insured banking
 institutions](https://research.fdic.gov/bankfind/index.html). Their site uses
