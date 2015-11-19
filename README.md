@@ -99,7 +99,7 @@ bank.find_branches!
 bank.find_history_events!
 ```
 
-There are more fields exposed in the Institution API then what we've exposed. Where the field names are obscure or acronym-y, we'd like to clarify them; since we're pre-1.0, if we haven't looked up a field's meaning quite yet, we're holding off. (You can still get all the fields via `#attributes`.)
+There are more fields exposed in the Institution API than what we've exposed. Where the field names are obscure or acronym-y, we'd like to clarify them; since we're pre-1.0, if we haven't looked up a field's meaning quite yet, we're holding off. (You can still get all the fields via `#attributes`.)
 
 ## Contributing
 
