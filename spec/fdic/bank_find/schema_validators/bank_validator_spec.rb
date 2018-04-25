@@ -34,17 +34,22 @@ describe FDIC::BankFind::SchemaValidators::BankValidator do
     end
 
     context 'valid response' do
+      let(:response_double) { double(parsed_response: valid_response_body) }
+
       before :each do
-        allow(client_instance_double).to receive(:find_bank) { valid_response_body }
+        allow(client_instance_double).to receive(:find_bank) { response_double }
       end
+
       it "returns true" do
         expect(bank_schema_validator.schema_valid?).to be_truthy
       end
     end
 
     context 'invalid response' do
+      let(:response_double) { double(parsed_response: invalid_response_body) }
+
       before :each do
-        allow(client_instance_double).to receive(:find_bank) { invalid_response_body }
+        allow(client_instance_double).to receive(:find_bank) { response_double }
       end
       context 'given a some other top level key' do
         let(:invalid_response_body) { { "f" => "doesn't matter here" } }
