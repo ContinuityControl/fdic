@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fdic (0.9.1)
+    fdic (0.9.2)
       httparty (~> 0.13)
       json-schema (~> 2.8)
 
