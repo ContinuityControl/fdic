@@ -23,20 +23,27 @@ describe FDIC::BankFind::SchemaValidators::HistoryEventValidator do
     end
 
     context 'valid response' do
+      let(:response_double) { double(parsed_response: valid_response_body) }
+
       before :each do
-        allow(client_instance_double).to receive(:find_history_events) { valid_response_body }
+        allow(client_instance_double).to receive(:find_history_events) { response_double }
       end
+
       it "returns true" do
         expect(history_event_validator.schema_valid?).to be_truthy
       end
     end
 
     context 'invalid response' do
+      let(:response_double) { double(parsed_response: invalid_response_body) }
+
       before :each do
-        allow(client_instance_double).to receive(:find_history_events) { invalid_response_body }
+        allow(client_instance_double).to receive(:find_history_events) { response_double }
       end
+
       context 'given a some other top level key' do
         let(:invalid_response_body) { { "f" => "doesn't matter here" } }
+
         it "returns false" do
           expect(history_event_validator.schema_valid?).to be_falsey
         end
